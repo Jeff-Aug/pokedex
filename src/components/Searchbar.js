@@ -7,15 +7,17 @@ import { searchPokemon } from "../Api/api";
 const Searchbar = () => {
     let [pokemon, setPokemon] = useState()
     let [search, setSearch] = useState()
+
+
     const onChangeHandler = (e) => {
         //toast.success(e.target.value)
         setSearch(e.target.value)
     }
 
-    const onButtonClickHandler = () => {
-        onSearchHandler(search)
+    // const onButtonClickHandler = () => {
+    //     onSearchHandler(search)
 
-    }
+    // }
 
     const onSearchHandler = async (pokemon) => {
         const result = await searchPokemon(pokemon)
@@ -35,7 +37,8 @@ const Searchbar = () => {
 
             </div>
             <div className="searchbar-btn"  >
-                <button onClick={onButtonClickHandler}> Buscar</button>
+                {/* <button onClick={onButtonClickHandler}> Buscar</button> */}
+                <button onClick={()=> onSearchHandler(search)}> Buscar</button>
             </div>
             {pokemon?(
                 <div>
